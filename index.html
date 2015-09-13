@@ -25,14 +25,21 @@
             <span class="gifshot-header-text">GifBooth</span>
           </span>
           <span class="options-button-group">
-            <button type="button" id="create-gif" class="btn btn-large btn-primary create-gif-button">CREATE GIF!</button>
+            <a href="#" type="button" id="create-gif" class="btn btn-large btn-primary create-gif-button" role="button">Create GIF</a>
+            <a href="#" type="button" id="save-gif" class="btn btn-large btn-default save-gif-button hidden" role="button" download="gifshot-demo.gif">Save GIF</a>
           </span>
+
+
           <!-- main-header -->
           <header class="main-navigation navbar demo-navigation">
               <a href="https://cartodb.com/">CARTODB</a>
               <a class="active" href="demo.html">DEMO</a> 
           </header>
+          <!-- save gif input -->
+          <input name="gifName" id="gifName" class="form-control" value="Type name here... ie name.gif" size="30" placeholder="Add text here..."></input>
         </nav>
+        <br/>
+
       <!-- demo-section  -->
       <section class="demo-section v-center">
         <div>

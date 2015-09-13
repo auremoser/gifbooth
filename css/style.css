@@ -938,6 +938,16 @@ progress:not([value])::-webkit-progress-bar {
   margin: auto;
 }
 
+.save-gif-button {
+  background: #e6e6e6;
+  color: #000;
+}
+
+.save-gif-button:hover {
+  color: #000;
+  opacity: 0.6;
+}
+
 @-webkit-keyframes rotation {
   from {
     -webkit-transform: rotate(0deg)

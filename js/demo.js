@@ -1,5 +1,7 @@
 (function(window, document) {
   var createGIFButton = document.querySelector('#create-gif'),
+    saveGIFButton = document.querySelector('#save-gif'),
+    downloadAttrSupported = ('download' in document.createElement('a')),
     gifSource = document.querySelector('#GIFSource'),
     gifType = document.querySelector('#GIFType'),
     interval = document.querySelector("#interval"),
@@ -43,6 +45,7 @@
     passedOptions,
     updateCodeBlock = function(obj) {
       obj = obj || {};
+      saveGIFButton.classList.add('hidden');
       var targetElem = obj.targetElem,
         selectedOptions = getSelectedOptions(),
         options = (function() {
@@ -114,6 +117,12 @@
             placeholderDiv.classList.add('hidden');
             gifshotImagePreview.innerHTML = '';
             gifshotImagePreview.appendChild(animatedImage);
+
+            if(downloadAttrSupported) {
+              saveGIFButton.download = document.querySelector('#gifName').value;
+              saveGIFButton.href = obj.image;
+              saveGIFButton.classList.remove('hidden');
+            }
           } else {
             console.log('obj.error', obj.error);
             console.log('obj.errorCode', obj.errorCode);
